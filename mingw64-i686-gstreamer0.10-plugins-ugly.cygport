@@ -1,0 +1,23 @@
+CROSS_HOST="i686-w64-mingw32"
+GST_PLUGINS_ENABLE="a52dec amrnb amrwb cdio dvdread lame mad mpeg2dec
+                    sidplay twolame x264"
+GST_PLUGINS_DISABLE=
+inherit cross gst-plugins
+
+NAME="mingw64-i686-gstreamer0.10-plugins-ugly"
+VERSION=0.10.19
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GStreamer 0.10 Ugly plugins for Win32 toolchain"
+DESCRIPTION="GStreamer Ugly Plug-ins is a set of plug-ins that have good
+quality and correct functionality, but distributing them might pose problems.
+The license on either the plug-ins or the supporting libraries might not be
+how we'd like. The code might be widely known to present patent problems in
+some jurisdictions."
+
+PATCH_URI="
+	http://cgit.freedesktop.org/gstreamer/gst-plugins-ugly/patch/ext/cdio?id=6700410
+	0.10.19-amr-includedir.patch
+"
+
+KEEP_LA_FILES="none"
